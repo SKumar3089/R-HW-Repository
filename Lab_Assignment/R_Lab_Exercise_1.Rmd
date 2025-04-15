@@ -1,7 +1,7 @@
 ---
 title: "DS311 - Basic R Lab Exercise"
-author: "Norman Lo"
-date: "10/25/2024"
+author: "Shaun Kumar"
+date: "04/14/2025"
 output:
   html_document: default
   pdf_document: default
@@ -153,9 +153,13 @@ Hint: Check out the "letters" and "LETTERS" key words in R.
 
 ```{r}
 # Enter your code here.
+# 1. Create a vector of the 26 alphabet lower case letters in sequence.
+v4 <- letters
+v4
 
-
-
+# 2. Create a 2 by 13 matrix for the 26 English upper case letter in sequence.
+m3 <- matrix(LETTERS, nrow = 2, byrow = TRUE)
+m3
 ```
 
 ### DataFrame
@@ -253,18 +257,18 @@ Once you finished and knit the RMarkdown file into html file, you should be able
 ```{r}
 # Write your code here!
 # Part a
-
+x <- 4
 
 # Part b
-
+y <- 12
 
 # Part c
-
+print(paste("x is equal to ", x))
+print(paste("y is equal to ", y))
 
 # Part d
-x = 2
-y = 3
-z = 10
+z <- y/x
+
 # Part e
 print(paste("y divided by x is equal to ", z))
 
