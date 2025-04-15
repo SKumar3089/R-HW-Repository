@@ -1,6 +1,6 @@
 ---
 title: "DS311 - R Lab Assignment"
-author: "Your Name"
+author: "Shaun Kumar"
 date: "`r Sys.Date()`"
 output: 
   html_document:
@@ -35,10 +35,11 @@ a. Report the number of variables and observations in the data set.
 
 ```{r}
 # Enter your code here!
-
+num_obs <- nrow(mtcars)
+num_vars <- ncol(mtcars)
 
 # Answer:
-print("There are total of _____ variables and _____ observations in this data set.")
+sprintf("There are total of %d variables and %d observations in this data set.",num_vars,num_obs)
 ```
 
 
@@ -47,10 +48,16 @@ b. Print the summary statistics of the data set and report how many discrete and
 
 ```{r}
 # Enter your code here!
+summary(mtcars)
 
+discrete_vars <- sapply(mtcars, function(x) is.integer(x) || (is.numeric(x) && length(unique(x)) < 10))
+continuous_vars <- !discrete_vars
+
+num_discrete <- sum(discrete_vars)
+num_continuous <- sum(continuous_vars)
 
 # Answer:
-print("There are _____ discrete variables and _____ continuous variables in this data set.")
+sprintf("There are %d discrete variables and %d continuous variables in this data set.",num_discrete,num_continuous)
 ```
 
 
