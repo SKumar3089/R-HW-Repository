@@ -1,0 +1,1039 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={DS311 - R Lab Assignment},
+  pdfauthor={Shaun Kumar},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{DS311 - R Lab Assignment}
+\author{Shaun Kumar}
+\date{2025-04-27}
+
+\begin{document}
+\maketitle
+
+\subsection{R Assignment 1}\label{r-assignment-1}
+
+\begin{itemize}
+\tightlist
+\item
+  In this assignment, we are going to apply some of the build in data
+  set in R for descriptive statistics analysis.
+\item
+  To earn full grade in this assignment, students need to complete the
+  coding tasks for each question to get the result.
+\item
+  After finished all the questions, knit the document into HTML format
+  for submission.
+\end{itemize}
+
+\subsubsection{Question 1}\label{question-1}
+
+Using the \textbf{mtcars} data set in R, please answer the following
+questions.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Loading the data}
+\FunctionTok{data}\NormalTok{(mtcars)}
+
+\CommentTok{\# Head of the data set}
+\FunctionTok{head}\NormalTok{(mtcars)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                    mpg cyl disp  hp drat    wt  qsec vs am gear carb
+## Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+## Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+## Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+## Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
+## Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
+## Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  Report the number of variables and observations in the data set.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Enter your code here!}
+\NormalTok{num\_obs }\OtherTok{\textless{}{-}} \FunctionTok{nrow}\NormalTok{(mtcars)}
+\NormalTok{num\_vars }\OtherTok{\textless{}{-}} \FunctionTok{ncol}\NormalTok{(mtcars)}
+
+\CommentTok{\# Answer:}
+\FunctionTok{print}\NormalTok{(}\FunctionTok{paste}\NormalTok{(}\StringTok{"There are total of"}\NormalTok{,num\_vars, }\StringTok{"variables and"}\NormalTok{,num\_obs, }\StringTok{"observations in this data set."}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "There are total of 11 variables and 32 observations in this data set."
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Print the summary statistics of the data set and report how many
+  discrete and continuous variables are in the data set.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Enter your code here!}
+\FunctionTok{summary}\NormalTok{(mtcars)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##       mpg             cyl             disp             hp       
+##  Min.   :10.40   Min.   :4.000   Min.   : 71.1   Min.   : 52.0  
+##  1st Qu.:15.43   1st Qu.:4.000   1st Qu.:120.8   1st Qu.: 96.5  
+##  Median :19.20   Median :6.000   Median :196.3   Median :123.0  
+##  Mean   :20.09   Mean   :6.188   Mean   :230.7   Mean   :146.7  
+##  3rd Qu.:22.80   3rd Qu.:8.000   3rd Qu.:326.0   3rd Qu.:180.0  
+##  Max.   :33.90   Max.   :8.000   Max.   :472.0   Max.   :335.0  
+##       drat             wt             qsec             vs        
+##  Min.   :2.760   Min.   :1.513   Min.   :14.50   Min.   :0.0000  
+##  1st Qu.:3.080   1st Qu.:2.581   1st Qu.:16.89   1st Qu.:0.0000  
+##  Median :3.695   Median :3.325   Median :17.71   Median :0.0000  
+##  Mean   :3.597   Mean   :3.217   Mean   :17.85   Mean   :0.4375  
+##  3rd Qu.:3.920   3rd Qu.:3.610   3rd Qu.:18.90   3rd Qu.:1.0000  
+##  Max.   :4.930   Max.   :5.424   Max.   :22.90   Max.   :1.0000  
+##        am              gear            carb      
+##  Min.   :0.0000   Min.   :3.000   Min.   :1.000  
+##  1st Qu.:0.0000   1st Qu.:3.000   1st Qu.:2.000  
+##  Median :0.0000   Median :4.000   Median :2.000  
+##  Mean   :0.4062   Mean   :3.688   Mean   :2.812  
+##  3rd Qu.:1.0000   3rd Qu.:4.000   3rd Qu.:4.000  
+##  Max.   :1.0000   Max.   :5.000   Max.   :8.000
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{discrete\_vars }\OtherTok{\textless{}{-}} \FunctionTok{sapply}\NormalTok{(mtcars, }\ControlFlowTok{function}\NormalTok{(x) }\FunctionTok{is.integer}\NormalTok{(x) }\SpecialCharTok{||}\NormalTok{ (}\FunctionTok{is.numeric}\NormalTok{(x) }\SpecialCharTok{\&\&} \FunctionTok{length}\NormalTok{(}\FunctionTok{unique}\NormalTok{(x)) }\SpecialCharTok{\textless{}} \DecValTok{10}\NormalTok{))}
+\NormalTok{continuous\_vars }\OtherTok{\textless{}{-}} \SpecialCharTok{!}\NormalTok{discrete\_vars}
+
+\NormalTok{num\_discrete }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(discrete\_vars)}
+\NormalTok{num\_continuous }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(continuous\_vars)}
+
+\CommentTok{\# Answer:}
+\FunctionTok{print}\NormalTok{(}\FunctionTok{paste}\NormalTok{(}\StringTok{"There are"}\NormalTok{,num\_discrete, }\StringTok{"discrete variables and"}\NormalTok{,num\_continuous, }\StringTok{"continuous variables in this data set."}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "There are 5 discrete variables and 6 continuous variables in this data set."
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Calculate the mean, variance, and standard deviation for the variable
+  \textbf{mpg} and assign them into variable names m, v, and s. Report
+  the results in the print statement.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Enter your code here!}
+\NormalTok{m }\OtherTok{\textless{}{-}} \FunctionTok{round}\NormalTok{(}\FunctionTok{mean}\NormalTok{(mtcars}\SpecialCharTok{$}\NormalTok{mpg),}\DecValTok{2}\NormalTok{)}
+\NormalTok{v }\OtherTok{\textless{}{-}} \FunctionTok{round}\NormalTok{(}\FunctionTok{var}\NormalTok{(mtcars}\SpecialCharTok{$}\NormalTok{mpg),}\DecValTok{2}\NormalTok{)}
+\NormalTok{s }\OtherTok{\textless{}{-}} \FunctionTok{round}\NormalTok{(}\FunctionTok{sd}\NormalTok{(mtcars}\SpecialCharTok{$}\NormalTok{mpg),}\DecValTok{2}\NormalTok{)}
+
+
+ \FunctionTok{print}\NormalTok{(}\FunctionTok{paste}\NormalTok{(}\StringTok{"The average of Mile Per Gallon from this data set is"}\NormalTok{, m , }\StringTok{"with variance"}\NormalTok{, v , }\StringTok{"and standard deviation"}\NormalTok{, s, }\StringTok{"."}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "The average of Mile Per Gallon from this data set is 20.09 with variance 36.32 and standard deviation 6.03 ."
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Create two tables to summarize 1) average mpg for each cylinder class
+  and 2) the standard deviation of mpg for each gear class.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Enter your code here!}
+\NormalTok{avg\_mpg\_by\_cyl }\OtherTok{\textless{}{-}} \FunctionTok{aggregate}\NormalTok{(mpg }\SpecialCharTok{\textasciitilde{}}\NormalTok{ cyl, }\AttributeTok{data =}\NormalTok{ mtcars, }\AttributeTok{FUN =}\NormalTok{ mean)}
+\NormalTok{sd\_mpg\_by\_gear }\OtherTok{\textless{}{-}} \FunctionTok{aggregate}\NormalTok{(mpg }\SpecialCharTok{\textasciitilde{}}\NormalTok{ gear, }\AttributeTok{data =}\NormalTok{ mtcars, }\AttributeTok{FUN =}\NormalTok{ sd)}
+
+\FunctionTok{print}\NormalTok{(avg\_mpg\_by\_cyl)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   cyl      mpg
+## 1   4 26.66364
+## 2   6 19.74286
+## 3   8 15.10000
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(sd\_mpg\_by\_gear)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   gear      mpg
+## 1    3 3.371618
+## 2    4 5.276764
+## 3    5 6.658979
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  Create a crosstab that shows the number of observations belong to each
+  cylinder and gear class combinations. The table should show how many
+  observations given the car has 4 cylinders with 3 gears, 4 cylinders
+  with 4 gears, etc. Report which combination is recorded in this data
+  set and how many observations for this type of car.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Enter your code here!}
+\NormalTok{crosstab }\OtherTok{\textless{}{-}} \FunctionTok{table}\NormalTok{(mtcars}\SpecialCharTok{$}\NormalTok{cyl, mtcars}\SpecialCharTok{$}\NormalTok{gear)}
+\NormalTok{max\_count }\OtherTok{\textless{}{-}} \FunctionTok{max}\NormalTok{(crosstab)}
+\NormalTok{max\_position }\OtherTok{\textless{}{-}} \FunctionTok{which}\NormalTok{(crosstab }\SpecialCharTok{==}\NormalTok{ max\_count, }\AttributeTok{arr.ind =} \ConstantTok{TRUE}\NormalTok{)}
+
+\NormalTok{most\_common\_cyl }\OtherTok{\textless{}{-}} \FunctionTok{as.numeric}\NormalTok{(}\FunctionTok{rownames}\NormalTok{(crosstab)[max\_position[}\DecValTok{1}\NormalTok{]])}
+\NormalTok{most\_common\_gear }\OtherTok{\textless{}{-}} \FunctionTok{as.numeric}\NormalTok{(}\FunctionTok{colnames}\NormalTok{(crosstab)[max\_position[}\DecValTok{2}\NormalTok{]])}
+
+\FunctionTok{print}\NormalTok{(}\FunctionTok{paste}\NormalTok{(}\StringTok{"The most common car type in this data set is car with"}\NormalTok{,most\_common\_cyl,}\StringTok{"cylinders and"}\NormalTok{,most\_common\_gear,}\StringTok{"gears. There are total of"}\NormalTok{,max\_count,}\StringTok{"cars belong to this specification in the data set."}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "The most common car type in this data set is car with 8 cylinders and 3 gears. There are total of 12 cars belong to this specification in the data set."
+\end{verbatim}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsubsection{Question 2}\label{question-2}
+
+Use different visualization tools to summarize the data sets in this
+question.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  Using the \textbf{PlantGrowth} data set, visualize and compare the
+  weight of the plant in the three separated group. Give labels to the
+  title, x-axis, and y-axis on the graph. Write a paragraph to summarize
+  your findings.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Load the data set}
+\FunctionTok{data}\NormalTok{(}\StringTok{"PlantGrowth"}\NormalTok{)}
+
+\CommentTok{\# Head of the data set}
+\FunctionTok{head}\NormalTok{(PlantGrowth)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   weight group
+## 1   4.17  ctrl
+## 2   5.58  ctrl
+## 3   5.18  ctrl
+## 4   6.11  ctrl
+## 5   4.50  ctrl
+## 6   4.61  ctrl
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Enter your code here!}
+\CommentTok{\# Set a CRAN mirror before installing packages}
+\FunctionTok{options}\NormalTok{(}\AttributeTok{repos =} \FunctionTok{c}\NormalTok{(}\AttributeTok{CRAN =} \StringTok{"https://cran.rstudio.com"}\NormalTok{))}
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"ggplot2"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## The downloaded binary packages are in
+##  /var/folders/bb/qxcf7b0d1zzbx6vt008mk2r00000gn/T//RtmpicVEOS/downloaded_packages
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggplot2)}
+
+\FunctionTok{ggplot}\NormalTok{(PlantGrowth, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ group, }\AttributeTok{y =}\NormalTok{ weight, }\AttributeTok{fill =}\NormalTok{ group)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}
+    \AttributeTok{title =} \StringTok{"Comparison of Plant Weights Across Groups"}\NormalTok{,}
+    \AttributeTok{x =} \StringTok{"Treatment Group"}\NormalTok{,}
+    \AttributeTok{y =} \StringTok{"Plant Weight"}
+\NormalTok{  ) }\SpecialCharTok{+}
+  \FunctionTok{theme\_minimal}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{legend.position =} \StringTok{"none"}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{R_Lab_Assignment_files/figure-latex/unnamed-chunk-7-1.pdf}
+
+Result:
+
+=\textgreater{} Report a paragraph to summarize your findings from the
+plot! The boxplot shows how plant weights differ between the three
+groups: control, treatment 1 (trt1), and treatment 2 (trt2). The control
+group has a fairly steady range of plant weights, with most plants
+weighing around 5. Treatment 1 seems to result in slightly lower plant
+weights, while treatment 2 shows slightly higher weights compared to the
+control group. However, the ranges of weights for all three groups
+overlap, so it's not clear if the differences are meaningful just by
+looking at the plot.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Using the \textbf{mtcars} data set, plot the histogram for the column
+  \textbf{mpg} with 10 breaks. Give labels to the title, x-axis, and
+  y-axis on the graph. Report the most observed mpg class from the data
+  set.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{hist\_result }\OtherTok{\textless{}{-}} \FunctionTok{hist}\NormalTok{(}
+\NormalTok{  mtcars}\SpecialCharTok{$}\NormalTok{mpg,}
+  \AttributeTok{breaks =} \DecValTok{10}\NormalTok{,}
+  \AttributeTok{main =} \StringTok{"Distribution of Miles Per Gallon (mpg)"}\NormalTok{,}
+  \AttributeTok{xlab =} \StringTok{"Miles Per Gallon (mpg)"}\NormalTok{,}
+  \AttributeTok{ylab =} \StringTok{"Frequency"}\NormalTok{,}
+  \AttributeTok{col =} \StringTok{"lightblue"}\NormalTok{,}
+  \AttributeTok{border =} \StringTok{"black"}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{R_Lab_Assignment_files/figure-latex/unnamed-chunk-8-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{max\_bin\_index }\OtherTok{\textless{}{-}} \FunctionTok{which.max}\NormalTok{(hist\_result}\SpecialCharTok{$}\NormalTok{counts)}
+\NormalTok{most\_common\_range }\OtherTok{\textless{}{-}} \FunctionTok{paste}\NormalTok{(}\FunctionTok{round}\NormalTok{(hist\_result}\SpecialCharTok{$}\NormalTok{breaks[max\_bin\_index], }\DecValTok{1}\NormalTok{), }
+                           \StringTok{"{-}"}\NormalTok{, }
+                           \FunctionTok{round}\NormalTok{(hist\_result}\SpecialCharTok{$}\NormalTok{breaks[max\_bin\_index }\SpecialCharTok{+} \DecValTok{1}\NormalTok{], }\DecValTok{1}\NormalTok{))}
+
+
+\FunctionTok{print}\NormalTok{(}\FunctionTok{paste}\NormalTok{(}\StringTok{"Most of the cars in this data set are in the class of"}\NormalTok{,most\_common\_range,}\StringTok{"miles per gallon."}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Most of the cars in this data set are in the class of 14 - 16 miles per gallon."
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Using the \textbf{USArrests} data set, create a pairs plot to display
+  the correlations between the variables in the data set. Plot the
+  scatter plot with \textbf{Murder} and \textbf{Assault}. Give labels to
+  the title, x-axis, and y-axis on the graph. Write a paragraph to
+  summarize your results from both plots.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Load the data set}
+\FunctionTok{data}\NormalTok{(}\StringTok{"USArrests"}\NormalTok{)}
+
+\CommentTok{\# Head of the data set}
+\FunctionTok{head}\NormalTok{(USArrests)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##            Murder Assault UrbanPop Rape
+## Alabama      13.2     236       58 21.2
+## Alaska       10.0     263       48 44.5
+## Arizona       8.1     294       80 31.0
+## Arkansas      8.8     190       50 19.5
+## California    9.0     276       91 40.6
+## Colorado      7.9     204       78 38.7
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Enter your code here!}
+\FunctionTok{pairs}\NormalTok{(USArrests, }\AttributeTok{main =} \StringTok{"Pairs Plot of USArrests Data"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{R_Lab_Assignment_files/figure-latex/unnamed-chunk-9-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(USArrests}\SpecialCharTok{$}\NormalTok{Murder, USArrests}\SpecialCharTok{$}\NormalTok{Assault,}
+     \AttributeTok{main =} \StringTok{"Scatter Plot of Murder vs Assault"}\NormalTok{,}
+     \AttributeTok{xlab =} \StringTok{"Murder Rate"}\NormalTok{,}
+     \AttributeTok{ylab =} \StringTok{"Assault Rate"}\NormalTok{,}
+     \AttributeTok{col =} \StringTok{"blue"}\NormalTok{,}
+     \AttributeTok{pch =} \DecValTok{19}\NormalTok{)  }\CommentTok{\# pch=19 gives solid circles}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{R_Lab_Assignment_files/figure-latex/unnamed-chunk-9-2.pdf}
+
+Result:
+
+=\textgreater{} Report a paragraph to summarize your findings from the
+plot!
+
+The plot shows the relationship between the different crime rates in the
+USArrests dataset. It highlights a clear positive correlation between
+Murder and Assault, where states with higher murder rates tend to have
+higher assault rates as well. The scatter plot further confirms this,
+showing an upward trend between these two variables. Overall, the plots
+suggest that murder and assault are closely related.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\subsubsection{Question 3}\label{question-3}
+
+Download the housing data set from www.jaredlander.com and find out what
+explains the housing prices in New York City.
+
+Note: Check your working directory to make sure that you can download
+the data into the data folder.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  Create your own descriptive statistics and aggregation tables to
+  summarize the data set and find any meaningful results between
+  different variables in the data set.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Head of the cleaned data set}
+\FunctionTok{head}\NormalTok{(housingData)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   Neighborhood Market.Value.per.SqFt      Boro Year.Built
+## 1    FINANCIAL                200.00 Manhattan       1920
+## 2    FINANCIAL                242.76 Manhattan       1985
+## 4    FINANCIAL                271.23 Manhattan       1930
+## 5      TRIBECA                247.48 Manhattan       1985
+## 6      TRIBECA                191.37 Manhattan       1986
+## 7      TRIBECA                211.53 Manhattan       1985
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Enter your code here!}
+\FunctionTok{summary}\NormalTok{(housingData)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  Neighborhood       Market.Value.per.SqFt     Boro             Year.Built  
+##  Length:2530        Min.   : 10.66        Length:2530        Min.   :1825  
+##  Class :character   1st Qu.: 75.10        Class :character   1st Qu.:1926  
+##  Mode  :character   Median :114.89        Mode  :character   Median :1986  
+##                     Mean   :133.17                           Mean   :1967  
+##                     3rd Qu.:189.91                           3rd Qu.:2005  
+##                     Max.   :399.38                           Max.   :2010
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{aggregate}\NormalTok{(Market.Value.per.SqFt }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Boro, }\AttributeTok{data =}\NormalTok{ housingData, }\AttributeTok{FUN =}\NormalTok{ mean)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##            Boro Market.Value.per.SqFt
+## 1         Bronx              47.93232
+## 2      Brooklyn              80.13439
+## 3     Manhattan             180.59265
+## 4        Queens              77.38137
+## 5 Staten Island              41.26958
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{aggregate}\NormalTok{(Year.Built }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Boro, }\AttributeTok{data =}\NormalTok{ housingData, }\AttributeTok{FUN =}\NormalTok{ mean)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##            Boro Year.Built
+## 1         Bronx   1983.841
+## 2      Brooklyn   1983.906
+## 3     Manhattan   1953.803
+## 4        Queens   1983.866
+## 5 Staten Island   1980.833
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cor}\NormalTok{(housingData}\SpecialCharTok{$}\NormalTok{Market.Value.per.SqFt, housingData}\SpecialCharTok{$}\NormalTok{Year.Built)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] -0.09559073
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{table}\NormalTok{(housingData}\SpecialCharTok{$}\NormalTok{Boro, housingData}\SpecialCharTok{$}\NormalTok{Neighborhood)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                
+##                 ALPHABET CITY ARROCHAR-SHORE ACRES ASTORIA BATH BEACH BAY RIDGE
+##   Bronx                     0                    0       0          0         0
+##   Brooklyn                  0                    0       0          6         8
+##   Manhattan                24                    0       0          0         0
+##   Queens                    0                    0      30          0         0
+##   Staten Island             0                    1       0          0         0
+##                
+##                 BAYSIDE BEDFORD PARK/NORWOOD BEDFORD STUYVESANT BELMONT
+##   Bronx               0                    2                  0       1
+##   Brooklyn            0                    0                 58       0
+##   Manhattan           0                    0                  0       0
+##   Queens              9                    0                  0       0
+##   Staten Island       0                    0                  0       0
+##                
+##                 BENSONHURST BERGEN BEACH BOERUM HILL BOROUGH PARK BRIARWOOD
+##   Bronx                   0            0           0            0         0
+##   Brooklyn                7            1          15           35         0
+##   Manhattan               0            0           0            0         0
+##   Queens                  0            0           0            0         4
+##   Staten Island           0            0           0            0         0
+##                
+##                 BRIGHTON BEACH BRONX-UNKNOWN BRONXDALE BROOKLYN HEIGHTS
+##   Bronx                      0             2         3                0
+##   Brooklyn                  21             0         0                9
+##   Manhattan                  0             0         0                0
+##   Queens                     0             0         0                0
+##   Staten Island              0             0         0                0
+##                
+##                 BUSH TERMINAL BUSHWICK CANARSIE CARROLL GARDENS CHELSEA
+##   Bronx                     0        0        0               0       0
+##   Brooklyn                  1        2        4               9       0
+##   Manhattan                 0        0        0               0      88
+##   Queens                    0        0        0               0       0
+##   Staten Island             0        0        0               0       0
+##                
+##                 CHINATOWN CITY ISLAND CIVIC CENTER CLINTON CLINTON HILL
+##   Bronx                 0           1            0       0            0
+##   Brooklyn              0           0            0       0           13
+##   Manhattan            21           0           23      31            0
+##   Queens                0           0            0       0            0
+##   Staten Island         0           0            0       0            0
+##                
+##                 COBBLE HILL COBBLE HILL-WEST COLLEGE POINT CONEY ISLAND CORONA
+##   Bronx                   0                0             0            0      0
+##   Brooklyn                5                8             0            4      0
+##   Manhattan               0                0             0            0      0
+##   Queens                  0                0             3            0     17
+##   Staten Island           0                0             0            0      0
+##                
+##                 CROWN HEIGHTS DOWNTOWN-FULTON FERRY DOWNTOWN-FULTON MALL
+##   Bronx                     0                     0                    0
+##   Brooklyn                 14                    14                    2
+##   Manhattan                 0                     0                    0
+##   Queens                    0                     0                    0
+##   Staten Island             0                     0                    0
+##                
+##                 DOWNTOWN-METROTECH DYKER HEIGHTS EAST NEW YORK EAST TREMONT
+##   Bronx                          0             0             0            3
+##   Brooklyn                       3             1             6            0
+##   Manhattan                      0             0             0            0
+##   Queens                         0             0             0            0
+##   Staten Island                  0             0             0            0
+##                
+##                 EAST VILLAGE ELMHURST FAR ROCKAWAY FASHION FINANCIAL
+##   Bronx                    0        0            0       0         0
+##   Brooklyn                 0        0            0       0         0
+##   Manhattan               26        0            0      15        36
+##   Queens                   0       55            4       0         0
+##   Staten Island            0        0            0       0         0
+##                
+##                 FLATBUSH-CENTRAL FLATBUSH-LEFFERTS GARDEN FLATBUSH-NORTH
+##   Bronx                        0                        0              0
+##   Brooklyn                     6                        1              8
+##   Manhattan                    0                        0              0
+##   Queens                       0                        0              0
+##   Staten Island                0                        0              0
+##                
+##                 FLATIRON FLUSHING MEADOW PARK FLUSHING-NORTH FLUSHING-SOUTH
+##   Bronx                0                    0              0              0
+##   Brooklyn             0                    0              0              0
+##   Manhattan           45                    0              0              0
+##   Queens               0                    1            133              8
+##   Staten Island        0                    0              0              0
+##                
+##                 FOREST HILLS FORT GREENE GLENDALE GOWANUS GRAMERCY GRANT CITY
+##   Bronx                    0           0        0       0        0          0
+##   Brooklyn                 0          10        0       3        0          0
+##   Manhattan                0           0        0       0       17          0
+##   Queens                  17           0        3       0        0          0
+##   Staten Island            0           0        0       0        0          2
+##                
+##                 GRAVESEND GREAT KILLS GREENPOINT GREENWICH VILLAGE-CENTRAL
+##   Bronx                 0           0          0                         0
+##   Brooklyn             19           0         19                         0
+##   Manhattan             0           0          0                        60
+##   Queens                0           0          0                         0
+##   Staten Island         0           1          0                         0
+##                
+##                 GREENWICH VILLAGE-WEST GRYMES HILL HAMMELS HARLEM-CENTRAL
+##   Bronx                              0           0       0              0
+##   Brooklyn                           0           0       0              0
+##   Manhattan                         57           0       0             94
+##   Queens                             0           0       5              0
+##   Staten Island                      0           1       0              0
+##                
+##                 HARLEM-EAST HARLEM-UPPER HARLEM-WEST HIGHBRIDGE/MORRIS HEIGHTS
+##   Bronx                   0            0           0                         1
+##   Brooklyn                0            0           0                         0
+##   Manhattan              36           12           2                         0
+##   Queens                  0            0           0                         0
+##   Staten Island           0            0           0                         0
+##                
+##                 HILLCREST HOLLIS HOWARD BEACH INWOOD JACKSON HEIGHTS JAMAICA
+##   Bronx                 0      0            0      0               0       0
+##   Brooklyn              0      0            0      0               0       0
+##   Manhattan             0      0            0      2               0       0
+##   Queens                1      1            5      0              21       5
+##   Staten Island         0      0            0      0               0       0
+##                
+##                 JAMAICA ESTATES JAVITS CENTER KENSINGTON KEW GARDENS
+##   Bronx                       0             0          0           0
+##   Brooklyn                    0             0          2           0
+##   Manhattan                   0             1          0           0
+##   Queens                      2             0          0          10
+##   Staten Island               0             0          0           0
+##                
+##                 KINGSBRIDGE HTS/UNIV HTS KINGSBRIDGE/JEROME PARK KIPS BAY
+##   Bronx                                1                       5        0
+##   Brooklyn                             0                       0        0
+##   Manhattan                            0                       0       13
+##   Queens                               0                       0        0
+##   Staten Island                        0                       0        0
+##                
+##                 LITTLE ITALY LITTLE NECK LONG ISLAND CITY LOWER EAST SIDE
+##   Bronx                    0           0                0               0
+##   Brooklyn                 0           0                0               0
+##   Manhattan               13           0                0              42
+##   Queens                   0           1               24               0
+##   Staten Island            0           0                0               0
+##                
+##                 MADISON MANHATTAN VALLEY MASPETH MIDDLE VILLAGE MIDTOWN CBD
+##   Bronx               0                0       0              0           0
+##   Brooklyn           19                0       0              0           0
+##   Manhattan           0               23       0              0          13
+##   Queens              0                0       4              7           0
+##   Staten Island       0                0       0              0           0
+##                
+##                 MIDTOWN EAST MIDTOWN WEST MIDWOOD MORNINGSIDE HEIGHTS
+##   Bronx                    0            0       0                   0
+##   Brooklyn                 0            0      11                   0
+##   Manhattan               56           47       0                   1
+##   Queens                   0            0       0                   0
+##   Staten Island            0            0       0                   0
+##                
+##                 MORRIS PARK/VAN NEST MORRISANIA/LONGWOOD MOTT HAVEN/PORT MORRIS
+##   Bronx                            1                  16                      1
+##   Brooklyn                         0                   0                      0
+##   Manhattan                        0                   0                      0
+##   Queens                           0                   0                      0
+##   Staten Island                    0                   0                      0
+##                
+##                 MURRAY HILL NEW BRIGHTON NEW BRIGHTON-ST. GEORGE
+##   Bronx                   0            0                       0
+##   Brooklyn                0            0                       0
+##   Manhattan              39            0                       0
+##   Queens                  0            0                       0
+##   Staten Island           0            3                       2
+##                
+##                 NEW SPRINGVILLE OAKLAND GARDENS OCEAN HILL OCEAN PARKWAY-NORTH
+##   Bronx                       0               0          0                   0
+##   Brooklyn                    0               0         10                   9
+##   Manhattan                   0               0          0                   0
+##   Queens                      0               1          0                   0
+##   Staten Island               9               0          0                   0
+##                
+##                 OCEAN PARKWAY-SOUTH OZONE PARK PARK SLOPE PARK SLOPE SOUTH
+##   Bronx                           0          0          0                0
+##   Brooklyn                        1          0         31               10
+##   Manhattan                       0          0          0                0
+##   Queens                          0          1          0                0
+##   Staten Island                   0          0          0                0
+##                
+##                 PARKCHESTER PELHAM PARKWAY SOUTH PROSPECT HEIGHTS REGO PARK
+##   Bronx                   2                    1                0         0
+##   Brooklyn                0                    0                5         0
+##   Manhattan               0                    0                0         0
+##   Queens                  0                    0                0        27
+##   Staten Island           0                    0                0         0
+##                
+##                 RIDGEWOOD RIVERDALE ROCKAWAY PARK SCHUYLERVILLE/PELHAM BAY
+##   Bronx                 0        17             0                        1
+##   Brooklyn              0         0             0                        0
+##   Manhattan             0         0             0                        0
+##   Queens                3         0             5                        0
+##   Staten Island         0         0             0                        0
+##                
+##                 SHEEPSHEAD BAY SILVER LAKE SOHO SOUNDVIEW SOUTH OZONE PARK
+##   Bronx                      0           0    0         6                0
+##   Brooklyn                  27           0    0         0                0
+##   Manhattan                  0           0   55         0                0
+##   Queens                     0           0    0         0                1
+##   Staten Island              0           2    0         0                0
+##                
+##                 SOUTHBRIDGE SUNNYSIDE SUNSET PARK THROGS NECK TOMPKINSVILLE
+##   Bronx                   0         0           0           3             0
+##   Brooklyn                0         0          23           0             0
+##   Manhattan               9         0           0           0             0
+##   Queens                  0        10           0           0             0
+##   Staten Island           0         1           0           0             1
+##                
+##                 TRIBECA UPPER EAST SIDE (59-79) UPPER EAST SIDE (79-96)
+##   Bronx               0                       0                       0
+##   Brooklyn            0                       0                       0
+##   Manhattan          74                     123                      78
+##   Queens              0                       0                       0
+##   Staten Island       0                       0                       0
+##                
+##                 UPPER EAST SIDE (96-110) UPPER WEST SIDE (59-79)
+##   Bronx                                0                       0
+##   Brooklyn                             0                       0
+##   Manhattan                            5                      87
+##   Queens                               0                       0
+##   Staten Island                        0                       0
+##                
+##                 UPPER WEST SIDE (79-96) UPPER WEST SIDE (96-116)
+##   Bronx                               0                        0
+##   Brooklyn                            0                        0
+##   Manhattan                          66                       34
+##   Queens                              0                        0
+##   Staten Island                       0                        0
+##                
+##                 WASHINGTON HEIGHTS LOWER WASHINGTON HEIGHTS UPPER
+##   Bronx                                0                        0
+##   Brooklyn                             0                        0
+##   Manhattan                            5                        6
+##   Queens                               0                        0
+##   Staten Island                        0                        0
+##                
+##                 WEST NEW BRIGHTON WHITESTONE WILLIAMSBRIDGE
+##   Bronx                         0          0              2
+##   Brooklyn                      0          0              0
+##   Manhattan                     0          0              0
+##   Queens                        0          2              0
+##   Staten Island                 1          0              0
+##                
+##                 WILLIAMSBURG-CENTRAL WILLIAMSBURG-EAST WILLIAMSBURG-NORTH
+##   Bronx                            0                 0                  0
+##   Brooklyn                        60                38                 26
+##   Manhattan                        0                 0                  0
+##   Queens                           0                 0                  0
+##   Staten Island                    0                 0                  0
+##                
+##                 WILLIAMSBURG-SOUTH WINDSOR TERRACE WOODHAVEN WOODSIDE
+##   Bronx                          0               0         0        0
+##   Brooklyn                      34               5         0        0
+##   Manhattan                      0               0         0        0
+##   Queens                         0               0         4        8
+##   Staten Island                  0               0         0        0
+##                
+##                 WYCKOFF HEIGHTS
+##   Bronx                       0
+##   Brooklyn                    3
+##   Manhattan                   0
+##   Queens                      0
+##   Staten Island               0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"dplyr"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## The downloaded binary packages are in
+##  /var/folders/bb/qxcf7b0d1zzbx6vt008mk2r00000gn/T//RtmpicVEOS/downloaded_packages
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(dplyr)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Attaching package: 'dplyr'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{housingData }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{group\_by}\NormalTok{(Boro) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{summarise}\NormalTok{(}
+    \AttributeTok{Avg\_Value =} \FunctionTok{mean}\NormalTok{(Market.Value.per.SqFt),}
+    \AttributeTok{Avg\_Year =} \FunctionTok{mean}\NormalTok{(Year.Built),}
+    \AttributeTok{Count =} \FunctionTok{n}\NormalTok{()}
+\NormalTok{  )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 5 x 4
+##   Boro          Avg_Value Avg_Year Count
+##   <chr>             <dbl>    <dbl> <int>
+## 1 Bronx              47.9    1984.    69
+## 2 Brooklyn           80.1    1984.   626
+## 3 Manhattan         181.     1954.  1379
+## 4 Queens             77.4    1984.   432
+## 5 Staten Island      41.3    1981.    24
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Create multiple plots to demonstrates the correlations between
+  different variables. Remember to label all axes and give title to each
+  graph.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# This shows if newer houses are generally more expensive per square foot}
+\FunctionTok{plot}\NormalTok{(housingData}\SpecialCharTok{$}\NormalTok{Year.Built, housingData}\SpecialCharTok{$}\NormalTok{Market.Value.per.SqFt,}
+     \AttributeTok{main =} \StringTok{"Market Value vs. Year Built"}\NormalTok{,}
+     \AttributeTok{xlab =} \StringTok{"Year Built"}\NormalTok{,}
+     \AttributeTok{ylab =} \StringTok{"Market Value per SqFt"}\NormalTok{,}
+     \AttributeTok{pch =} \DecValTok{19}\NormalTok{,        }\CommentTok{\# solid circles}
+     \AttributeTok{col =} \StringTok{"blue"}\NormalTok{)    }\CommentTok{\# color of points}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{R_Lab_Assignment_files/figure-latex/unnamed-chunk-12-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{boxplot}\NormalTok{(Market.Value.per.SqFt }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Boro, }\AttributeTok{data =}\NormalTok{ housingData,}
+        \AttributeTok{main =} \StringTok{"Market Value per SqFt by Borough"}\NormalTok{,}
+        \AttributeTok{xlab =} \StringTok{"Borough"}\NormalTok{,}
+        \AttributeTok{ylab =} \StringTok{"Market Value per SqFt"}\NormalTok{,}
+        \AttributeTok{col =} \StringTok{"lightgreen"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{R_Lab_Assignment_files/figure-latex/unnamed-chunk-12-2.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# This shows how prices are distributed }
+\FunctionTok{hist}\NormalTok{(housingData}\SpecialCharTok{$}\NormalTok{Market.Value.per.SqFt,}
+     \AttributeTok{main =} \StringTok{"Distribution of Market Value per SqFt"}\NormalTok{,}
+     \AttributeTok{xlab =} \StringTok{"Market Value per SqFt"}\NormalTok{,}
+     \AttributeTok{ylab =} \StringTok{"Frequency"}\NormalTok{,}
+     \AttributeTok{col =} \StringTok{"orange"}\NormalTok{,}
+     \AttributeTok{breaks =} \DecValTok{30}\NormalTok{)   }\CommentTok{\# number of bins}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{R_Lab_Assignment_files/figure-latex/unnamed-chunk-12-3.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# This graoh shows which boroughs are most/least expensive on average}
+\FunctionTok{library}\NormalTok{(dplyr)}
+
+\NormalTok{boro\_avg }\OtherTok{\textless{}{-}}\NormalTok{ housingData }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{group\_by}\NormalTok{(Boro) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{Avg\_Value =} \FunctionTok{mean}\NormalTok{(Market.Value.per.SqFt))}
+
+\FunctionTok{barplot}\NormalTok{(boro\_avg}\SpecialCharTok{$}\NormalTok{Avg\_Value,}
+        \AttributeTok{names.arg =}\NormalTok{ boro\_avg}\SpecialCharTok{$}\NormalTok{Boro,}
+        \AttributeTok{main =} \StringTok{"Average Market Value per SqFt by Borough"}\NormalTok{,}
+        \AttributeTok{xlab =} \StringTok{"Borough"}\NormalTok{,}
+        \AttributeTok{ylab =} \StringTok{"Average Market Value per SqFt"}\NormalTok{,}
+        \AttributeTok{col =} \StringTok{"lightblue"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{R_Lab_Assignment_files/figure-latex/unnamed-chunk-12-4.pdf}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Write a summary about your findings from this exercise.
+\end{enumerate}
+
+=\textgreater{} Enter your answer here!
+
+In this exercise, we analyzed the housing dataset containing information
+on neighborhood, borough, market value per square foot, and year built.
+After cleaning the data, descriptive statistics and graphical
+visualizations demonstrated that location plays a more critical role in
+determining property value than building age. While newer constructions
+often had higher market values, older properties in desirable locations
+remained competitively priced. The distribution of market values was
+heavily right-skewed, with a concentration of moderately priced
+properties and a smaller number of high-value outliers. Significant
+variability within boroughs further highlighted the diverse nature of
+local housing markets.
+
+\end{document}
